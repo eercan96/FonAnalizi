@@ -1,0 +1,12 @@
+@model Category
+    
+<h2>Kategori Ekle</h2>
+<hr>
+<form asp-controller="Category" asp-action="create" method="post">
+    <div class="mb-3">
+        <label asp-for="Title" class="form-label">Kategori Adı</label>
+        <input asp-for="Title" class="form-control">
+    </div>
+    
+    <button type="submit" class="btn btn-success">Kaydet</button>
+</form>

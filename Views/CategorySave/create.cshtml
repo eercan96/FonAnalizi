@@ -1,0 +1,21 @@
+@model CategorySave
+    
+<h2>Kategoriye Fon Ekle</h2>
+<hr>
+<form asp-controller="CategorySave" asp-action="create" method="post">
+    <div class="mb-3">
+        <label asp-for="FonId" class="form-label">Fon</label>
+        <select asp-for="FonId" asp-items="ViewBag.Fons" class="form-select">
+            <option value="">Seçiniz</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label asp-for="CategoryId" class="form-label">Category</label>
+        <select asp-for="CategoryId" asp-items="ViewBag.Categories" class="form-select">
+            <option value="">Seçiniz</option>
+        </select>
+    </div>
+   
+
+    <button type="submit" class="btn btn-success">Kaydet</button>
+</form>

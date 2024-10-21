@@ -1,0 +1,30 @@
+    @model IEnumerable<CategorySave>
+
+<h2>Fon kategorileri Listesi</h2>
+    <a href="/CategorySave/Create" class="btn btn-success">Kategori Ekle</a>
+    <hr>
+
+
+<table class="table table-bordered">
+        <thead>
+            <tr>
+                <th style="width: 150px;">@Html.DisplayNameFor(m=>m.SaveId)</th>
+                <th>@Html.DisplayNameFor(m=>m.Fon.FonName)</th>
+                <th>@Html.DisplayNameFor(m=>m.Category.Title)</th>
+                <th style="width: 150px;"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var item in Model){
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.SaveId)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Fon.FonName)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Category.Title)</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.FonId" class="btn btn-warning btn-sm">Details</a>
+                        <a asp-action="Delete" asp-route-id="@item.FonId" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>

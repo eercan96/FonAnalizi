@@ -1,0 +1,69 @@
+@model Fon
+    
+<h2>Fon Güncelle</h2>
+<hr>
+
+<div class="row">
+<div class="col-8">
+
+<form asp-controller="Fon" asp-action="edit" method="post">
+    <input type="hidden" asp-for="FonId">
+    <div class="mb-3">
+        <label asp-for="FonName" class="form-label">FON ADI</label>
+        <input asp-for="FonName" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label asp-for="FonShort" class="form-label">FON KODU</label>
+        <input asp-for="FonShort" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label asp-for="Price" class="form-label">FİYAT</label>
+        <input asp-for="Price" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label asp-for="OneDayChange" class="form-label">GÜNLÜK%</label>
+        <input asp-for="OneDayChange" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label asp-for="OneWeekChange" class="form-label">HAFTALIK%</label>
+        <input asp-for="OneWeekChange" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label asp-for="OneMonthChange" class="form-label">1AY%</label>
+        <input asp-for="OneMonthChange" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label asp-for="ThreeMonthChange" class="form-label">3AY%</label>
+        <input asp-for="ThreeMonthChange" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label asp-for="SixMonthChange" class="form-label">6AY%</label>
+        <input asp-for="SixMonthChange" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label asp-for="OneYearChange" class="form-label">1YIL%</label>
+        <input asp-for="OneYearChange" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label asp-for="ThreeYearChange" class="form-label">3YIL%</label>
+        <input asp-for="ThreeYearChange" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label asp-for="FiveYearChange" class="form-label">5YIL%</label>
+        <input asp-for="FiveYearChange" class="form-control">
+    </div>
+
+    <button type="submit" class="btn btn-success">Kaydet</button>
+</form>
+</div>
+<div class="col-4">
+    <h4>Kategoriler</h4>
+    <hr>
+    <ul>
+        @foreach(var item in @Model.CategorySaves){
+            <li>@item.Category.Title</li>
+        }
+    </ul>
+
+</div>
+</div>

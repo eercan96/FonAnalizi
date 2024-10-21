@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Fon>
+
+<h2>Fon Listesi</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            
+            <th>@Html.DisplayNameFor(m => m.FonName)</th>
+            <th>@Html.DisplayNameFor(m => m.FonShort)</th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewBag.PriceSortParm">Price</a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewBag.OneDayChangeSortParm">One Day Change</a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewBag.OneWeekChangeSortParm">One Week Change</a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewBag.OneMonthChangeSortParm">One Month Change</a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewBag.ThreeMonthChangeSortParm">Three Month Change</a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewBag.SixMonthChangeSortParm">Six Month Change</a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewBag.OneYearChangeSortParm">One Year Change</a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewBag.ThreeYearChangeSortParm">Three Year Change</a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewBag.FiveYearChangeSortParm">Five Year Change</a>
+            </th>
+            <th style="width: 150px;"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                
+                <td>@Html.DisplayFor(modelItem => item.FonName)</td>
+                <td>@Html.DisplayFor(modelItem => item.FonShort)</td>
+                <td>@Html.DisplayFor(modelItem => item.Price)</td>
+                <td>@Html.DisplayFor(modelItem => item.OneDayChange)</td>
+                <td>@Html.DisplayFor(modelItem => item.OneWeekChange)</td>
+                <td>@Html.DisplayFor(modelItem => item.OneMonthChange)</td>
+                <td>@Html.DisplayFor(modelItem => item.ThreeMonthChange)</td>
+                <td>@Html.DisplayFor(modelItem => item.SixMonthChange)</td>
+                <td>@Html.DisplayFor(modelItem => item.OneYearChange)</td>
+                <td>@Html.DisplayFor(modelItem => item.ThreeYearChange)</td>
+                <td>@Html.DisplayFor(modelItem => item.FiveYearChange)</td>
+                
+            </tr>
+        }
+    </tbody>
+</table>

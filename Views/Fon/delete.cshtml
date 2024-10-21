@@ -1,0 +1,11 @@
+@model Fon
+
+<p>
+    <b>@Model.FonName @Model.FonShort</b> isimli fonu silmek istediğine emin misin ?
+
+    <form asp-action="Delete" method="post">
+        <input type="hidden" value="@Model.FonId" name="id">
+        <button type="submit" class="btn btn-danger">Evet</button>
+        <a asp-action="index" class="btn btn-success">Hayır</a>
+    </form>
+</p>

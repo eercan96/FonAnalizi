@@ -1,0 +1,47 @@
+@model IEnumerable<Fon>
+
+<h2>Fon Listesi</h2>
+    <a href="/Fon/Create" class="btn btn-success">Fon Ekle</a>
+    <hr>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(m=>m.FonId)</th>
+            <th>@Html.DisplayNameFor(m=>m.FonName)</th>
+            <th>@Html.DisplayNameFor(m=>m.FonShort)</th>
+            <th>@Html.DisplayNameFor(m=>m.Price)</th>
+            <th>@Html.DisplayNameFor(m=>m.OneDayChange)</th>
+            <th>@Html.DisplayNameFor(m=>m.OneWeekChange)</th>
+            <th>@Html.DisplayNameFor(m=>m.OneMonthChange)</th>
+            <th>@Html.DisplayNameFor(m=>m.ThreeMonthChange)</th>
+            <th>@Html.DisplayNameFor(m=>m.SixMonthChange)</th>
+            <th>@Html.DisplayNameFor(m=>m.OneYearChange)</th>
+            <th>@Html.DisplayNameFor(m=>m.ThreeYearChange)</th>
+            <th>@Html.DisplayNameFor(m=>m.FiveYearChange)</th>
+            <th style="width: 150px;"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model){
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.FonId)</td>
+                <td>@Html.DisplayFor(modelItem => item.FonName)</td>
+                <td>@Html.DisplayFor(modelItem => item.FonShort)</td>
+                <td>@Html.DisplayFor(modelItem => item.Price)</td>
+                <td>@Html.DisplayFor(modelItem => item.OneDayChange)</td>
+                <td>@Html.DisplayFor(modelItem => item.OneWeekChange)</td>
+                <td>@Html.DisplayFor(modelItem => item.OneMonthChange)</td>
+                <td>@Html.DisplayFor(modelItem => item.ThreeMonthChange)</td>
+                <td>@Html.DisplayFor(modelItem => item.SixMonthChange)</td>
+                <td>@Html.DisplayFor(modelItem => item.OneYearChange)</td>
+                <td>@Html.DisplayFor(modelItem => item.ThreeYearChange)</td>
+                <td>@Html.DisplayFor(modelItem => item.FiveYearChange)</td>              
+                <td>
+                    <a asp-controller="Fon" asp-action="Edit" asp-route-id="@item.FonId" class="btn btn-warning btn-sm">Details</a>
+                    <a asp-controller="Fon" asp-action="Delete" asp-route-id="@item.FonId" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

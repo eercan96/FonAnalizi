@@ -1,0 +1,11 @@
+@model Category
+
+<p>
+    <b>@Model.Title</b> isimli kategoriyi silmek istediğine emin misin ?
+
+    <form asp-action="Delete" method="post">
+        <input type="hidden" value="@Model.CategoryId" name="id">
+        <button type="submit" class="btn btn-danger">Evet</button>
+        <a asp-action="index" class="btn btn-success">Hayır</a>
+    </form>
+</p>
